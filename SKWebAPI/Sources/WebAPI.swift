@@ -1099,6 +1099,18 @@ extension WebAPI {
     }
 }
 
+// MARK: - Reminders
+extension WebAPI {
+    public func remindersList(success: ((_ reminders: [[String: Any]]?) -> Void)?, failure: FailureClosure?) {
+        let parameters: [String: Any] = ["token": token]
+        networkInterface.request(.remindersList, parameters: parameters, successClosure: { response in
+            success?(response["reminders"] as? [[String: Any]])
+        }) { error in
+            failure?(error)
+        }
+    }
+}
+
 // MARK: - Team
 extension WebAPI {
     public func teamInfo(success: ((_ info: [String: Any]?) -> Void)?, failure: FailureClosure?) {

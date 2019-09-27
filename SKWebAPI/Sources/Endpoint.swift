@@ -80,6 +80,7 @@ public enum Endpoint: String {
     case reactionsGet = "reactions.get"
     case reactionsList = "reactions.list"
     case reactionsRemove = "reactions.remove"
+    case remindersList = "reminders.list"
     case rtmStart = "rtm.start"
     case rtmConnect = "rtm.connect"
     case starsAdd = "stars.add"
